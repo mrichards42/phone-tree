@@ -23,12 +23,12 @@ Option                           Default     Description
 ------                           -------     -----------
 -T, --format TYPE                edn         Output format (edn, dot, html, csv)
     --dot-attr KEY=VALUE         rankdir=LR  Global dot output options (can be repeated).
--n, --include-ns REGEX                       Project namespaces to analyze (can be repeated).
--e, --exclude-ns REGEX                       Project namespaces to exclude from analysis (can be repeated).
+    --include-ns REGEX                       Project namespaces to analyze (can be repeated).
+    --exclude-ns REGEX                       Project namespaces to exclude from analysis (can be repeated).
     --exclude-node REGEX                     Exclude these nodes from the graph (can be repeated).
     --include-node REGEX                     Include only these nodes in the graph (can be repeated).
--S, --include-descendants REGEX              Include only descendants of these nodes in the graph (can be repeated).
--P, --include-ancestors REGEX                Include only ancestors of these nodes in the graph (can be repeated).
+    --include-descendants REGEX              Include only descendants of these nodes in the graph (can be repeated).
+    --include-ancestors REGEX                Include only ancestors of these nodes in the graph (can be repeated).
     --collapse REGEX                         Include only these nodes, and collapse intermediate edges (can be repeated).
 -v                                           Set verbosity (repeat to increase verbosity)
 ```

@@ -1,0 +1,30 @@
+;; TODO: move to a central file (~/.lein/call-graph-redefs.clj maybe?)
+
+;; Don't actually need this redef, but it cleans things up to have it
+(defmacro com.climate.newrelic.trace/defn-traced
+  [name & body]
+  `(defn ~name ~@body))
+
+;; compare
+#_(comment
+  (defmulti mount.core/start identity)
+  (defmulti mount.core/stop identity)
+  (defmacro mount.core/defstate
+    [name & body]
+    `(do
+       (def ~name (delay [~@body]))
+       (defmethod mount.core/start '~n [~'_]
+         ~name)
+       (defmethod mount.core/stop '~n [~'_]
+         ~name))))
+
+;; ... with
+
+(defmacro mount.core/defstate
+  [n & body]
+  ;; maybe? getting the quoting exactly right might be a little error-prone,
+  ;; but it's a lot more compact that the above
+  `(def ~(with-meta n `{:phone-tree/edges
+                        [{:src 'mount.core/start :dest '~n}
+                         {:src 'mount.core/stop :dest '~n}]})
+     (delay [~@body])))

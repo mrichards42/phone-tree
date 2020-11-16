@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Call Graph</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="https://unpkg.com/graphlib@2.1.7/dist/graphlib.core.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/viz.js@1.8.1/viz.js" type="javascript/worker"></script>
+    <script src="https://unpkg.com/d3-graphviz@2.6.1/build/d3-graphviz.js"></script>
+
+    <script>(function() {
+
+  function id_to_edge(id) {
+    var [from, to] = id.split(' -> ');
+    if (from && to) {
+      return {from, to}
+    }
+  }
+
+  /* graphlib prototype additions */
+  graphlib.Graph.fromSVG = function(svg) {
+    var g = new graphlib.Graph();
+    svg.querySelectorAll('.node').forEach(el => g.setNode(el.id));
+    svg.querySelectorAll('.edge').forEach(el => {
+      var edge = id_to_edge(el.id);
+      g.setEdge(edge.from, edge.to, {id: el.id});
+    });
+    return g;
+  }
+
+  function bfs(graph, node, next, callback) {
+    var seen = new Set();
+    var stack = [node];
+    while (node = stack.pop()) {
+      next(node).forEach(n => {
+        if (!seen.has(n)) {
+          seen.add(n);
+          stack.push(n);
+          callback(n);
+        }
+      });
+    }
+  }
+
+  graphlib.Graph.prototype.walkPredecessors = function(node, callback) {
+    bfs(this, node, (n) => (this.predecessors(n) || []), callback);
+  }
+
+  graphlib.Graph.prototype.walkSuccessors = function(node, callback) {
+    bfs(this, node, (n) => (this.successors(n) || []), callback);
+  }
+
+
+
+  /* path highlighting functions */
+  function clearClass(svg, klass) {
+    svg.classed(klass, false);
+    svg.selectAll('g').classed(klass, false);
+  }
+
+  function highlightElement(id, klass) {
+    d3.select(document.getElementById(id)).classed(klass, true);
+  }
+
+  function subgraphFromId(graph, id) {
+    // Handle edges
+    var {from, to} = id_to_edge(id) || {};
+    from = from || id;
+    to = to || id;
+
+    // Build the subgraph (recursive predecessors + recursive successors)
+    var ids = new Set([from, to]);
+    graph.walkPredecessors(to, n => ids.add(n));
+    graph.walkSuccessors(from, n => ids.add(n));
+    return graph.filterNodes(n => ids.has(n));
+  }
+
+  function setPathClass(svg, graph, id, klass) {
+    var subgraph = subgraphFromId(graph, id);
+    subgraph.nodes().forEach(n => highlightElement(n, klass))
+    subgraph.edges().forEach(e => highlightElement(subgraph.edge(e).id, klass));
+  }
+
+
+  /* main entrypoint */
+  function highlight(svg, graph) {
+    graph = graph || graphlib.Graph.fromSVG(svg.node());
+
+    // clicking selects a path and dims the rest of the graph
+    svg.selectAll('g.node, g.edge')
+      .on('click', function() {
+        clearClass(svg, 'selected');
+        svg.classed('dimmed selected', true);
+        setPathClass(svg, graph, this.id, 'selected');
+        d3.event.stopPropagation(); // don't propagate to background click
+      })
+
+    // hovering highlights a path
+    svg.selectAll('g.node, g.edge')
+      .on('mouseover', function() {
+        clearClass(svg, 'hovered');
+        setPathClass(svg, graph, this.id, 'hovered');
+      })
+      .on('mouseout', function() {
+        clearClass(svg, 'hovered')
+      })
+
+    // clicking the background unselects all paths
+    svg.on('click', function() {
+      clearClass(svg, 'selected dimmed');
+    })
+
+  }
+
+  window.highlightGraph = {subgraphFromId, setPathClass, highlight};
+
+})();
+</script>
+
+    <style>/* dimmed styles */
+svg.dimmed .graph :not(.hovered):not(.selected) [stroke]:not([stroke=none]) {
+  stroke: #ddd;
+  transition: 0.3s;
+}
+
+svg.dimmed .graph :not(.hovered):not(.selected) [fill]:not([fill=none]) {
+  fill: #ddd;
+  filter: grayscale() opacity(50%);
+  transition: 0.3s;
+}
+
+svg.dimmed .node:not(.hovered):not(.selected) :not(text) {
+  fill: none !important;
+  transition: 0.3s;
+}
+
+svg.dimmed .node:not(.hovered):not(.selected) image {
+  filter: grayscale() opacity(50%);
+}
+
+
+/* hover path highlight */
+.node.hovered [stroke]:not([stroke=none]),
+.edge.hovered [stroke]:not([stroke=none]) {
+  stroke: #f00 !important;
+  stroke-width: 2px;
+}
+
+.edge.hovered [fill]:not([fill=none]) {
+  fill: #f00 !important;
+}
+</style>
+
+    <script>
+      GRAPH = {"nodes":[{"id":"phone-tree.parse.ast\/dispatches","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"clojure.tools.namespace.dir\/scan-all","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.log\/debug","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/parse-cli","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.class\/reify-prefix","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/exclude-clojure-regex","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.parse.ast\/ast-resolve","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/print-graph","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.redef\/try-require","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :reify","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.ast\/parse :host-interop","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.interop","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.ast\/parse-children","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/conform-options","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/usage","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.util","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.ast\/parse (quote clojure.core\/defprotocol)","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.class\/guess-class* :var","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.redef\/redef-form","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :def","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.core\/collect-fn","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/first-form-var","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/-main","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.class\/guess-class","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :method","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.graph\/find-nodes","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"clojure.tools.namespace.track\/tracker","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.parse.build\/node-type clojure.lang.Symbol","attrs":{"fillcolor":"lavender","style":"filled","class":"node :protocol-fn"}},{"id":"clojure.tools.cli\/parse-opts","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.graph\/filter-ancestors","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.html\/mini-hbs","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.graph\/filter-descendants","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :quote","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.graph\/->csv","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.namespace","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.build\/node-type clojure.lang.MultiFn","attrs":{"fillcolor":"lavender","style":"filled","class":"node :protocol-fn"}},{"id":"phone-tree.log\/warnf","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/node-type","attrs":{"fillcolor":"lavender","style":"filled","class":"node :protocol-fn"}},{"id":"phone-tree.core\/prune-graph","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/matches-any?","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"clojure.java.io\/resource","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.parse.class\/guess-class* :default","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.core\/run-with-project","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.redef\/read-forms","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.namespace\/nss-in-dirs","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/edge","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.log\/*level*","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"clojure.tools.analyzer.jvm\/analyze","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.parse.build\/*parent*","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.parse.build\/node-type java.lang.Object","attrs":{"fillcolor":"lavender","style":"filled","class":"node :protocol-fn"}},{"id":"phone-tree.parse.ast\/parse-dispatch","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.protocol\/protocol-dispatch","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/->node","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.class\/guess-class*","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"clojure.tools.analyzer.ast\/children","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.parse.build\/attrs->ubergraph","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.html\/read-html-resource","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone_tree.parse.build.NodeType\/node_type","attrs":{"fillcolor":"lightcyan","style":"filled","class":"node :method"}},{"id":"phone-tree.parse.class\/record-reify!","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.protocol\/super-chain","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.protocol\/default-record-methods","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.log\/warn","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/exclude-java-regex","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.parse.ast\/parse :var","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.protocol","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.ast\/parse :instance-call","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.graph\/edge-attrs","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :protocol-invoke","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.ast","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.ast\/location","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.redef\/load-redefs","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"java.io.Reader\/close","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"java.io.StringWriter\/.","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.graph\/->topology","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse (quote clojure.core\/in-ns)","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.class","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.namespace","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.util\/var->symbol","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/cli-options","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.core","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse\/parse-ns","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.log\/log","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/node-type java.lang.Class","attrs":{"fillcolor":"lavender","style":"filled","class":"node :protocol-fn"}},{"id":"phone-tree.parse.ast\/parse :static-call","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.graph\/reachable-nodes","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.graph","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse\/ns->graph","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.macro","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.html","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.core\/my-defn","attrs":{"fillcolor":"palegreen","style":"filled","class":"node :macro"}},{"id":"phone-tree.redef","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.protocol\/default-record-method?","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.core\/run","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/node-type clojure.lang.Var","attrs":{"fillcolor":"lavender","style":"filled","class":"node :protocol-fn"}},{"id":"phone-tree.graph\/filter-nodes","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.log\/trace","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.graph\/->json","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"clojure.tools.analyzer.ast\/nodes","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.parse.ast\/parse (quote clojure.lang.MultiFn\/addMethod)","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.graph\/with-dot-attrs","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/conform-node","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.log\/tracef","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.protocol\/record-class?","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse (quote clojure.core\/defmacro)","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.class\/reify-class","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.core\/find-namespaces","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :new","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.graph\/node-attrs","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.multimethod","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.parse.build\/node","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.log","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.log\/level-map","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.log\/debugf","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :default","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.macro\/*in-macro*","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.parse.build\/merge-attrs","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/->edge","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"java.io.PushbackReader\/.","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"clojure.tools.analyzer.jvm\/analyze-ns","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.parse.build\/mark-external-nodes","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.var","attrs":{"fillcolor":"lightpink","style":"filled","class":"node :namespace"}},{"id":"phone-tree.graph\/->starting-nodes","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse\/nss->graph","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.log\/logf","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse (quote clojure.core\/extend)","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"clojure.tools.analyzer.jvm.utils\/box","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.parse.class\/reify-templates","attrs":{"fillcolor":"gray","style":"filled","class":"node"}},{"id":"phone-tree.html\/render","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.ast\/parse :the-var","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse.build\/node-id","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"clojure.data.json\/write-str","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.graph\/remove-nodes","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/node-type clojure.lang.Fn","attrs":{"fillcolor":"lavender","style":"filled","class":"node :protocol-fn"}},{"id":"phone-tree.graph\/->dot","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.build\/ubergraph","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"clojure.java.io\/reader","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}},{"id":"phone-tree.log\/enabled?","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.namespace\/prepare-namespaces","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"phone-tree.parse.class\/guess-class* :const","attrs":{"fillcolor":"lavender","style":"filled","class":"node :multimethod"}},{"id":"phone-tree.parse\/ast-meta->graph","attrs":{"fillcolor":"white","style":"filled","class":"node :function"}},{"id":"clojure.data.csv\/write-csv","attrs":{"fillcolor":"gray","style":"filled,dashed","class":"node"}}],"edges":[{"src":"phone-tree.parse.ast\/dispatches","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/first-form-var"},{"src":"phone-tree.parse.ast\/dispatches","attrs":{"class":"edge"},"dest":"phone-tree.util\/var->symbol"},{"src":"phone-tree.log\/debug","attrs":{"class":"edge"},"dest":"phone-tree.log\/log"},{"src":"phone-tree.core\/parse-cli","attrs":{"class":"edge"},"dest":"phone-tree.core\/conform-options"},{"src":"phone-tree.core\/parse-cli","attrs":{"class":"edge"},"dest":"phone-tree.core\/usage"},{"src":"phone-tree.core\/parse-cli","attrs":{"class":"edge"},"dest":"clojure.tools.cli\/parse-opts"},{"src":"phone-tree.core\/parse-cli","attrs":{"class":"edge"},"dest":"phone-tree.core\/cli-options"},{"src":"phone-tree.core\/print-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/->csv"},{"src":"phone-tree.core\/print-graph","attrs":{"class":"edge"},"dest":"phone-tree.core\/my-defn"},{"src":"phone-tree.core\/print-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/->json"},{"src":"phone-tree.core\/print-graph","attrs":{"class":"edge"},"dest":"phone-tree.html\/render"},{"src":"phone-tree.core\/print-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/->dot"},{"src":"phone-tree.parse.ast\/parse :reify","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/record-reify!"},{"src":"phone-tree.parse.ast\/parse :reify","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse"},{"src":"phone-tree.parse.ast\/parse :host-interop","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class"},{"src":"phone-tree.parse.ast\/parse :host-interop","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse-children","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse"},{"src":"phone-tree.core\/conform-options","attrs":{"class":"edge"},"dest":"phone-tree.core\/exclude-clojure-regex"},{"src":"phone-tree.core\/conform-options","attrs":{"class":"edge"},"dest":"phone-tree.core\/exclude-java-regex"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/defprotocol)","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/ast-resolve"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/defprotocol)","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/defprotocol)","attrs":{"class":"edge"},"dest":"phone-tree.util\/var->symbol"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/defprotocol)","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node"},{"src":"phone-tree.parse.class\/guess-class* :var","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/reify-class"},{"src":"phone-tree.redef\/redef-form","attrs":{"class":"edge"},"dest":"phone-tree.redef\/try-require"},{"src":"phone-tree.redef\/redef-form","attrs":{"class":"edge"},"dest":"phone-tree.log\/warnf"},{"src":"phone-tree.redef\/redef-form","attrs":{"class":"edge"},"dest":"phone-tree.log\/debugf"},{"src":"phone-tree.parse.ast\/parse :def","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node"},{"src":"phone-tree.parse.ast\/first-form-var","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/ast-resolve"},{"src":"phone-tree.core\/-main","attrs":{"class":"edge"},"dest":"phone-tree.core\/run"},{"src":"phone-tree.core\/-main","attrs":{"class":"edge"},"dest":"phone-tree.core\/parse-cli"},{"src":"phone-tree.parse.class\/guess-class","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class*"},{"src":"phone-tree.parse.class\/guess-class","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class"},{"src":"phone-tree.parse.ast\/parse :method","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse :method","attrs":{"class":"edge"},"dest":"phone-tree.parse.protocol\/default-record-method?"},{"src":"phone-tree.parse.ast\/parse :method","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node"},{"src":"phone-tree.parse.build\/node-type clojure.lang.Symbol","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type"},{"src":"phone-tree.graph\/filter-ancestors","attrs":{"class":"edge"},"dest":"phone-tree.graph\/->starting-nodes"},{"src":"phone-tree.graph\/filter-ancestors","attrs":{"class":"edge"},"dest":"phone-tree.graph\/filter-nodes"},{"src":"phone-tree.graph\/filter-ancestors","attrs":{"class":"edge"},"dest":"phone-tree.graph\/reachable-nodes"},{"src":"phone-tree.html\/mini-hbs","attrs":{"class":"edge"},"dest":"phone-tree.html\/read-html-resource"},{"src":"phone-tree.graph\/filter-descendants","attrs":{"class":"edge"},"dest":"phone-tree.graph\/reachable-nodes"},{"src":"phone-tree.graph\/filter-descendants","attrs":{"class":"edge"},"dest":"phone-tree.graph\/filter-nodes"},{"src":"phone-tree.graph\/filter-descendants","attrs":{"class":"edge"},"dest":"phone-tree.graph\/->starting-nodes"},{"src":"phone-tree.parse.ast\/parse :quote","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse-children"},{"src":"phone-tree.parse.ast\/parse :quote","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse :quote","attrs":{"class":"edge"},"dest":"phone-tree.parse.macro\/*in-macro*"},{"src":"phone-tree.graph\/->csv","attrs":{"class":"edge"},"dest":"phone-tree.graph\/->topology"},{"src":"phone-tree.graph\/->csv","attrs":{"class":"edge"},"dest":"clojure.data.csv\/write-csv"},{"src":"phone-tree.graph\/->csv","attrs":{"class":"edge"},"dest":"java.io.StringWriter\/."},{"src":"phone-tree.log\/warnf","attrs":{"class":"edge"},"dest":"phone-tree.log\/logf"},{"src":"phone-tree.parse.build\/node-type","attrs":{"class":"edge"},"dest":"phone_tree.parse.build.NodeType\/node_type"},{"src":"phone-tree.parse.build\/node-type","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type clojure.lang.MultiFn"},{"src":"phone-tree.parse.build\/node-type","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type clojure.lang.Symbol"},{"src":"phone-tree.parse.build\/node-type","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type clojure.lang.Fn"},{"src":"phone-tree.parse.build\/node-type","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type clojure.lang.Var"},{"src":"phone-tree.parse.build\/node-type","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type java.lang.Class"},{"src":"phone-tree.parse.build\/node-type","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type java.lang.Object"},{"src":"phone-tree.core\/prune-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/find-nodes"},{"src":"phone-tree.core\/prune-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/filter-ancestors"},{"src":"phone-tree.core\/prune-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/filter-descendants"},{"src":"phone-tree.core\/prune-graph","attrs":{"class":"edge"},"dest":"phone-tree.core\/matches-any?"},{"src":"phone-tree.core\/prune-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/filter-nodes"},{"src":"phone-tree.core\/prune-graph","attrs":{"class":"edge"},"dest":"phone-tree.graph\/remove-nodes"},{"src":"phone-tree.core\/run-with-project","attrs":{"class":"edge"},"dest":"phone-tree.core\/parse-cli"},{"src":"phone-tree.core\/run-with-project","attrs":{"class":"edge"},"dest":"phone-tree.core\/run"},{"src":"phone-tree.redef\/read-forms","attrs":{"class":"edge"},"dest":"java.io.Reader\/close"},{"src":"phone-tree.redef\/read-forms","attrs":{"class":"edge"},"dest":"java.io.PushbackReader\/."},{"src":"phone-tree.redef\/read-forms","attrs":{"class":"edge"},"dest":"clojure.java.io\/reader"},{"src":"phone-tree.namespace\/nss-in-dirs","attrs":{"class":"edge"},"dest":"clojure.tools.namespace.dir\/scan-all"},{"src":"phone-tree.namespace\/nss-in-dirs","attrs":{"class":"edge"},"dest":"clojure.tools.namespace.track\/tracker"},{"src":"phone-tree.parse.build\/edge","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/*parent*"},{"src":"phone-tree.parse.build\/edge","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/location"},{"src":"phone-tree.parse.build\/edge","attrs":{"class":"edge"},"dest":"phone-tree.log\/debugf"},{"src":"phone-tree.parse.build\/edge","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/->edge"},{"src":"phone-tree.parse.build\/edge","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-id"},{"src":"phone-tree.parse.ast\/parse-dispatch","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse"},{"src":"phone-tree.parse.ast\/parse-dispatch","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/dispatches"},{"src":"phone-tree.parse.protocol\/protocol-dispatch","attrs":{"class":"edge"},"dest":"clojure.tools.analyzer.jvm.utils\/box"},{"src":"phone-tree.parse.protocol\/protocol-dispatch","attrs":{"class":"edge"},"dest":"phone-tree.parse.protocol\/super-chain"},{"src":"phone-tree.parse.build\/->node","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-id"},{"src":"phone-tree.parse.class\/guess-class*","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class* :var"},{"src":"phone-tree.parse.class\/guess-class*","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class* :default"},{"src":"phone-tree.parse.class\/guess-class*","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class* :const"},{"src":"phone-tree.html\/read-html-resource","attrs":{"class":"edge"},"dest":"clojure.java.io\/resource"},{"src":"phone-tree.parse.class\/record-reify!","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/reify-templates"},{"src":"phone-tree.parse.class\/record-reify!","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/reify-prefix"},{"src":"phone-tree.parse.protocol\/super-chain","attrs":{"class":"edge"},"dest":"phone-tree.parse.protocol\/super-chain"},{"src":"phone-tree.parse.protocol\/default-record-methods","attrs":{"class":"edge"},"dest":"clojure.tools.analyzer.jvm\/analyze"},{"src":"phone-tree.parse.protocol\/default-record-methods","attrs":{"class":"edge"},"dest":"clojure.tools.analyzer.ast\/nodes"},{"src":"phone-tree.log\/warn","attrs":{"class":"edge"},"dest":"phone-tree.log\/log"},{"src":"phone-tree.parse.ast\/parse :var","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse :instance-call","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse-children"},{"src":"phone-tree.parse.ast\/parse :instance-call","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class"},{"src":"phone-tree.parse.ast\/parse :instance-call","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse :protocol-invoke","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class"},{"src":"phone-tree.parse.ast\/parse :protocol-invoke","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse :protocol-invoke","attrs":{"class":"edge"},"dest":"phone-tree.parse.protocol\/protocol-dispatch"},{"src":"phone-tree.parse.ast\/parse :protocol-invoke","attrs":{"class":"edge"},"dest":"phone-tree.util\/var->symbol"},{"src":"phone-tree.parse.ast\/parse :protocol-invoke","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse"},{"src":"phone-tree.redef\/load-redefs","attrs":{"class":"edge"},"dest":"phone-tree.redef\/read-forms"},{"src":"phone-tree.redef\/load-redefs","attrs":{"class":"edge"},"dest":"phone-tree.redef\/redef-form"},{"src":"phone-tree.redef\/load-redefs","attrs":{"class":"edge"},"dest":"phone-tree.log\/debugf"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/in-ns)","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node"},{"src":"phone-tree.core\/cli-options","attrs":{"class":"edge"},"dest":"phone-tree.core\/collect-fn"},{"src":"phone-tree.parse\/parse-ns","attrs":{"class":"edge"},"dest":"phone-tree.log\/debugf"},{"src":"phone-tree.parse\/parse-ns","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse"},{"src":"phone-tree.parse\/parse-ns","attrs":{"class":"edge"},"dest":"clojure.tools.analyzer.jvm\/analyze-ns"},{"src":"phone-tree.log\/log","attrs":{"class":"edge"},"dest":"phone-tree.log\/enabled?"},{"src":"phone-tree.parse.ast\/parse :static-call","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse-children"},{"src":"phone-tree.parse.ast\/parse :static-call","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class"},{"src":"phone-tree.parse.ast\/parse :static-call","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse\/ns->graph","attrs":{"class":"edge"},"dest":"phone-tree.parse\/parse-ns"},{"src":"phone-tree.parse\/ns->graph","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/ubergraph"},{"src":"phone-tree.parse.protocol\/default-record-method?","attrs":{"class":"edge"},"dest":"phone-tree.parse.protocol\/default-record-methods"},{"src":"phone-tree.parse.protocol\/default-record-method?","attrs":{"class":"edge"},"dest":"phone-tree.parse.protocol\/record-class?"},{"src":"phone-tree.core\/run","attrs":{"class":"edge"},"dest":"phone-tree.core\/print-graph"},{"src":"phone-tree.core\/run","attrs":{"class":"edge"},"dest":"phone-tree.core\/prune-graph"},{"src":"phone-tree.core\/run","attrs":{"class":"edge"},"dest":"phone-tree.log\/*level*"},{"src":"phone-tree.core\/run","attrs":{"class":"edge"},"dest":"phone-tree.log\/tracef"},{"src":"phone-tree.core\/run","attrs":{"class":"edge"},"dest":"phone-tree.core\/find-namespaces"},{"src":"phone-tree.core\/run","attrs":{"class":"edge"},"dest":"phone-tree.parse\/nss->graph"},{"src":"phone-tree.core\/run","attrs":{"class":"edge"},"dest":"phone-tree.namespace\/prepare-namespaces"},{"src":"phone-tree.parse.build\/node-type clojure.lang.Var","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type"},{"src":"phone-tree.graph\/filter-nodes","attrs":{"class":"edge"},"dest":"phone-tree.graph\/remove-nodes"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :reify"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :host-interop"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse (quote clojure.core\/defprotocol)"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :def"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :method"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :quote"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse-dispatch"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :var"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :instance-call"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :protocol-invoke"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse (quote clojure.core\/in-ns)"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :static-call"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse (quote clojure.lang.MultiFn\/addMethod)"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse (quote clojure.core\/defmacro)"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :new"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :default"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse (quote clojure.core\/extend)"},{"src":"phone-tree.parse.ast\/parse","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse :the-var"},{"src":"phone-tree.log\/trace","attrs":{"class":"edge"},"dest":"phone-tree.log\/log"},{"src":"phone-tree.graph\/->json","attrs":{"class":"edge"},"dest":"phone-tree.graph\/with-dot-attrs"},{"src":"phone-tree.graph\/->json","attrs":{"class":"edge"},"dest":"clojure.data.json\/write-str"},{"src":"phone-tree.parse.ast\/parse (quote clojure.lang.MultiFn\/addMethod)","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse (quote clojure.lang.MultiFn\/addMethod)","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node"},{"src":"phone-tree.graph\/with-dot-attrs","attrs":{"class":"edge"},"dest":"phone-tree.graph\/node-attrs"},{"src":"phone-tree.graph\/with-dot-attrs","attrs":{"class":"edge"},"dest":"phone-tree.graph\/edge-attrs"},{"src":"phone-tree.parse.build\/conform-node","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node-type"},{"src":"phone-tree.parse.build\/conform-node","attrs":{"class":"edge"},"dest":"phone-tree.util\/var->symbol"},{"src":"phone-tree.log\/tracef","attrs":{"class":"edge"},"dest":"phone-tree.log\/logf"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/defmacro)","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/defmacro)","attrs":{"class":"edge"},"dest":"clojure.tools.analyzer.ast\/nodes"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/defmacro)","attrs":{"class":"edge"},"dest":"phone-tree.parse.macro\/*in-macro*"},{"src":"phone-tree.parse.class\/reify-class","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/reify-templates"},{"src":"phone-tree.parse.class\/reify-class","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/reify-prefix"},{"src":"phone-tree.core\/find-namespaces","attrs":{"class":"edge"},"dest":"phone-tree.core\/matches-any?"},{"src":"phone-tree.core\/find-namespaces","attrs":{"class":"edge"},"dest":"phone-tree.namespace\/nss-in-dirs"},{"src":"phone-tree.parse.ast\/parse :new","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse-children"},{"src":"phone-tree.parse.ast\/parse :new","attrs":{"class":"edge"},"dest":"phone-tree.parse.class\/guess-class"},{"src":"phone-tree.parse.ast\/parse :new","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.build\/node","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/first-form-var"},{"src":"phone-tree.parse.build\/node","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.build\/node","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/*parent*"},{"src":"phone-tree.parse.build\/node","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/->node"},{"src":"phone-tree.parse.build\/node","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/location"},{"src":"phone-tree.parse.build\/node","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse"},{"src":"phone-tree.parse.build\/node","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/conform-node"},{"src":"phone-tree.log\/debugf","attrs":{"class":"edge"},"dest":"phone-tree.log\/logf"},{"src":"phone-tree.parse.ast\/parse :default","attrs":{"class":"edge"},"dest":"clojure.tools.analyzer.ast\/children"},{"src":"phone-tree.parse.ast\/parse :default","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/parse-children"},{"src":"phone-tree.parse\/nss->graph","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/ubergraph"},{"src":"phone-tree.parse\/nss->graph","attrs":{"class":"edge"},"dest":"phone-tree.parse\/parse-ns"},{"src":"phone-tree.log\/logf","attrs":{"class":"edge"},"dest":"phone-tree.log\/enabled?"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/extend)","attrs":{"class":"edge"},"dest":"phone-tree.log\/warnf"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/extend)","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/extend)","attrs":{"class":"edge"},"dest":"phone-tree.util\/var->symbol"},{"src":"phone-tree.parse.ast\/parse (quote clojure.core\/extend)","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/node"},{"src":"phone-tree.html\/render","attrs":{"class":"edge"},"dest":"phone-tree.html\/mini-hbs"},{"src":"phone-tree.html\/render","attrs":{"class":"edge"},"dest":"phone-tree.html\/read-html-resource"},{"src":"phone-tree.parse.ast\/parse :the-var","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/edge"},{"src":"phone-tree.parse.build\/node-id","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/conform-node"},{"src":"phone-tree.graph\/->dot","attrs":{"class":"edge"},"dest":"phone-tree.graph\/->dot"},{"src":"phone-tree.graph\/->dot","attrs":{"class":"edge"},"dest":"java.io.StringWriter\/."},{"src":"phone-tree.graph\/->dot","attrs":{"class":"edge"},"dest":"phone-tree.graph\/with-dot-attrs"},{"src":"phone-tree.parse.build\/ubergraph","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/attrs->ubergraph"},{"src":"phone-tree.parse.build\/ubergraph","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/merge-attrs"},{"src":"phone-tree.parse.build\/ubergraph","attrs":{"class":"edge"},"dest":"phone-tree.parse.build\/mark-external-nodes"},{"src":"phone-tree.log\/enabled?","attrs":{"class":"edge"},"dest":"phone-tree.log\/*level*"},{"src":"phone-tree.log\/enabled?","attrs":{"class":"edge"},"dest":"phone-tree.log\/level-map"},{"src":"phone-tree.parse.class\/guess-class* :const","attrs":{"class":"edge"},"dest":"phone-tree.log\/debugf"},{"src":"phone-tree.parse\/ast-meta->graph","attrs":{"class":"edge"},"dest":"phone-tree.parse.ast\/location"}]}
+    </script>
+  </head>
+  <body>
+
+    <div id="graph" width="100%" height="100%"></svg>
+
+    <script>
+      // Adapt the graph defined in system.js to graphlib
+      function loadGraph(graph) {
+        var g = new graphlib.Graph();
+        graph.nodes.forEach(n => g.setNode(n.id, {
+          ...n,
+          attrs: {...n.attrs, id: n.id}
+        }));
+        graph.edges.forEach(e => g.setEdge(e.src, e.dest, {
+          ...e,
+          id: e.src + ' -> ' + e.dest,
+          attrs: {...e.attrs, id: e.src + ' -> ' + e.dest},
+        }));
+        return g;
+      }
+
+      // render a graphlib graph as dot
+      function dotStr(g) {
+        function dotAttrStr(attrs) {
+          return `[${
+            Object.entries(attrs || {}).map(([key, val]) => `${key}="${val}"`).join("; ")
+          }]`
+        }
+
+        function defaultNode(n) {
+          return {
+            "id": n,
+            "attrs": {
+              "class": "node generated",
+              "fillcolor": "white",
+              "style": "filled,dotted",
+            }
+          }
+        }
+
+        return `digraph system {
+          rankdir=LR;
+          /* nodes */
+          ${g.nodes().map(n =>
+            JSON.stringify(n) + " " + dotAttrStr((g.node(n) || defaultNode(n)).attrs)
+          ).join("\n")}
+          /* edges */
+          ${g.edges().map(e =>
+            JSON.stringify(e.v) + ' -> ' + JSON.stringify(e.w) + ' ' + dotAttrStr(
+              g.edge(e).attrs
+            )
+          ).join("\n")}
+        }`
+      }
+
+      // render a graphlib graph to SVG
+      function renderGraph(graphviz, graph) {
+        var dot = dotStr(graph)
+        console.log(dot)
+        graphviz.renderDot(dot).on('end', function() {
+          // add transition effects _after_ the first render
+          graphviz
+            .fade(true)
+            .transition(function () {
+              return d3.transition()
+                .delay(100)
+                .duration(1500);
+            })
+
+          // Setup highlighting
+          highlightGraph.highlight(d3.select('#graph svg'), graph);
+
+          // Render a subgraph on double-click
+          d3.selectAll('#graph svg .node').on('dblclick', function () {
+            // hashchange causes a re-render
+            window.location.hash = '#' + encodeURIComponent(this.id);
+            d3.event.preventDefault();
+            return false;
+          })
+        });
+      }
+
+      function subgraphFromHash(graph) {
+        var id = decodeURIComponent(window.location.hash.substring(1));
+        var subgraph = id && highlightGraph.subgraphFromId(graph, id);
+        if (subgraph && subgraph.nodes().length) {
+          return subgraph;
+        } else {
+          return graph;
+        }
+      }
+
+
+      function main(g) {
+        var graph = loadGraph(g);
+
+        var graphviz = d3.select("#graph").graphviz();
+
+        graphviz
+          .fade(false)
+          .zoom(false)
+          .on('initEnd', function() {
+            // Render the first graph
+            renderGraph(graphviz, subgraphFromHash(graph));
+            // Render the next graph when the hash changes
+            window.onhashchange = function() {
+              renderGraph(graphviz, subgraphFromHash(graph));
+            }
+          });
+
+      }
+
+      main(GRAPH);
+
+    </script>
+  </body>
+</html>
+

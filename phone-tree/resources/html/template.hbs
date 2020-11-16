@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Call Graph</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="https://unpkg.com/graphlib@2.1.7/dist/graphlib.core.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/viz.js@1.8.1/viz.js" type="javascript/worker"></script>
+    <script src="https://unpkg.com/d3-graphviz@2.6.1/build/d3-graphviz.js"></script>
+
+    <script>{{> highlight-graph.js}}</script>
+
+    <style>{{> highlight-graph.css}}</style>
+
+    <script>
+      GRAPH = {{json-graph}}
+    </script>
+  </head>
+  <body>
+
+    <div id="graph" width="100%" height="100%"></svg>
+
+    <script>
+      // Adapt the graph defined in system.js to graphlib
+      function loadGraph(graph) {
+        var g = new graphlib.Graph();
+        graph.nodes.forEach(n => g.setNode(n.id, {
+          ...n,
+          attrs: {...n.attrs, id: n.id}
+        }));
+        graph.edges.forEach(e => g.setEdge(e.src, e.dest, {
+          ...e,
+          id: e.src + ' -> ' + e.dest,
+          attrs: {...e.attrs, id: e.src + ' -> ' + e.dest},
+        }));
+        return g;
+      }
+
+      // render a graphlib graph as dot
+      function dotStr(g) {
+        function dotAttrStr(attrs) {
+          return `[${
+            Object.entries(attrs || {}).map(([key, val]) => `${key}="${val}"`).join("; ")
+          }]`
+        }
+
+        function defaultNode(n) {
+          return {
+            "id": n,
+            "attrs": {
+              "class": "node generated",
+              "fillcolor": "white",
+              "style": "filled,dotted",
+            }
+          }
+        }
+
+        return `digraph system {
+          rankdir=LR;
+          /* nodes */
+          ${g.nodes().map(n =>
+            JSON.stringify(n) + " " + dotAttrStr((g.node(n) || defaultNode(n)).attrs)
+          ).join("\n")}
+          /* edges */
+          ${g.edges().map(e =>
+            JSON.stringify(e.v) + ' -> ' + JSON.stringify(e.w) + ' ' + dotAttrStr(
+              g.edge(e).attrs
+            )
+          ).join("\n")}
+        }`
+      }
+
+      // render a graphlib graph to SVG
+      function renderGraph(graphviz, graph) {
+        var dot = dotStr(graph)
+        console.log(dot)
+        graphviz.renderDot(dot).on('end', function() {
+          // add transition effects _after_ the first render
+          graphviz
+            .fade(true)
+            .transition(function () {
+              return d3.transition()
+                .delay(100)
+                .duration(1500);
+            })
+
+          // Setup highlighting
+          highlightGraph.highlight(d3.select('#graph svg'), graph);
+
+          // Render a subgraph on double-click
+          d3.selectAll('#graph svg .node').on('dblclick', function () {
+            // hashchange causes a re-render
+            window.location.hash = '#' + encodeURIComponent(this.id);
+            d3.event.preventDefault();
+            return false;
+          })
+        });
+      }
+
+      function subgraphFromHash(graph) {
+        var id = decodeURIComponent(window.location.hash.substring(1));
+        var subgraph = id && highlightGraph.subgraphFromId(graph, id);
+        if (subgraph && subgraph.nodes().length) {
+          return subgraph;
+        } else {
+          return graph;
+        }
+      }
+
+
+      function main(g) {
+        var graph = loadGraph(g);
+
+        var graphviz = d3.select("#graph").graphviz();
+
+        graphviz
+          .fade(false)
+          .zoom(false)
+          .on('initEnd', function() {
+            // Render the first graph
+            renderGraph(graphviz, subgraphFromHash(graph));
+            // Render the next graph when the hash changes
+            window.onhashchange = function() {
+              renderGraph(graphviz, subgraphFromHash(graph));
+            }
+          });
+
+      }
+
+      main(GRAPH);
+
+    </script>
+  </body>
+</html>

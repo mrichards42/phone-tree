@@ -1,0 +1,1257 @@
+parsed command line {:source-paths ("/Users/mike/code/phone-tree/phone-tree/src"), :format :html, :dot-attr ["rankdir=LR"], :include-clojure false, :include-java false, :exclude-sym [#"ubergraph.*|loom.*|clojure\.(core|string|set).*" #"clojure\.(core/|lang\.).*" #"java\.(lang\.|util\.).*"], :log-level :trace}
+Parsing namespace: phone-tree.util
+Adding edge from *parent* null (phone-tree.util) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.util) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.util) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.util) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.util) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.util) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.util) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.util) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.util) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.util) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.util) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.util) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.util) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to #'clojure.core/meta
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to #'clojure.core/str
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to #'clojure.core/meta
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.util/var->symbol (phone-tree.util/var->symbol) to #'clojure.core/str
+Parsing namespace: phone-tree.parse.ast
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.ast) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.ast) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.ast) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.ast) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.ast) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.ast) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.ast) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.ast/location (phone-tree.parse.ast/location) to #'clojure.core/select-keys
+Adding edge from *parent* phone-tree.parse.ast/ast-resolve (phone-tree.parse.ast/ast-resolve) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/ast-resolve (phone-tree.parse.ast/ast-resolve) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/ast-resolve (phone-tree.parse.ast/ast-resolve) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/ast-resolve (phone-tree.parse.ast/ast-resolve) to #'clojure.core/find-ns
+Adding edge from *parent* phone-tree.parse.ast/ast-resolve (phone-tree.parse.ast/ast-resolve) to #'clojure.core/symbol?
+Adding edge from *parent* phone-tree.parse.ast/ast-resolve (phone-tree.parse.ast/ast-resolve) to #'clojure.core/ns-resolve
+Adding edge from *parent* phone-tree.parse.ast/first-form-var (phone-tree.parse.ast/first-form-var) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/first-form-var (phone-tree.parse.ast/first-form-var) to #'clojure.core/list?
+Adding edge from *parent* phone-tree.parse.ast/first-form-var (phone-tree.parse.ast/first-form-var) to #'phone-tree.parse.ast/ast-resolve
+Adding edge from *parent* phone-tree.parse.ast/first-form-var (phone-tree.parse.ast/first-form-var) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'clojure.core/distinct
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'clojure.core/identity
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'phone-tree.parse.ast/first-form-var
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/dispatches (phone-tree.parse.ast/dispatches) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.ast/parse-dispatch (phone-tree.parse.ast/parse-dispatch) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/parse-dispatch (phone-tree.parse.ast/parse-dispatch) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.parse.ast/parse-dispatch (phone-tree.parse.ast/parse-dispatch) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.parse.ast/parse-dispatch (phone-tree.parse.ast/parse-dispatch) to #'clojure.core/contains?
+Adding edge from *parent* phone-tree.parse.ast/parse-dispatch (phone-tree.parse.ast/parse-dispatch) to #'clojure.core/methods
+Adding edge from *parent* phone-tree.parse.ast/parse-dispatch (phone-tree.parse.ast/parse-dispatch) to #'phone-tree.parse.ast/parse
+Adding edge from *parent* phone-tree.parse.ast/parse-dispatch (phone-tree.parse.ast/parse-dispatch) to #'phone-tree.parse.ast/dispatches
+Adding edge from *parent* null (phone-tree.parse.ast) to clojure.lang.Var/hasRoot
+Adding edge from *parent* null (phone-tree.parse.ast) to #'clojure.core/deref
+Adding edge from *parent* phone-tree.parse.ast/parse (phone-tree.parse.ast/parse) to clojure.lang.MultiFn/.
+Adding edge from *parent* phone-tree.parse.ast/parse (phone-tree.parse.ast/parse) to #'phone-tree.parse.ast/parse-dispatch
+Adding edge from *parent* phone-tree.parse.ast/parse-children (phone-tree.parse.ast/parse-children) to #'clojure.core/mapcat
+Adding edge from *parent* phone-tree.parse.ast/parse-children (phone-tree.parse.ast/parse-children) to #'phone-tree.parse.ast/parse
+Adding edge from *parent* phone-tree.parse.ast/parse-children (phone-tree.parse.ast/parse-children) to #'clojure.core/flatten
+Adding edge from *parent* phone-tree.parse.ast/parse :default (phone-tree.parse.ast/parse :default) to #'phone-tree.parse.ast/parse-children
+Adding edge from *parent* phone-tree.parse.ast/parse :default (phone-tree.parse.ast/parse :default) to #'clojure.tools.analyzer.ast/children
+Parsing namespace: phone-tree.log
+Adding edge from *parent* null (phone-tree.log) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.log) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.log) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.log) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.log) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.log) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.log) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.log) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.log) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.log) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.log) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.log) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.log) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.log/enabled? (phone-tree.log/enabled?) to #'clojure.core/contains?
+Adding edge from *parent* phone-tree.log/enabled? (phone-tree.log/enabled?) to #'phone-tree.log/level-map
+Adding edge from *parent* phone-tree.log/enabled? (phone-tree.log/enabled?) to #'phone-tree.log/*level*
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'phone-tree.log/enabled?
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'clojure.core/push-thread-bindings
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'clojure.core/hash-map
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'clojure.core/*out*
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'clojure.core/*err*
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'clojure.core/apply
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'clojure.core/println
+Adding edge from *parent* phone-tree.log/log (phone-tree.log/log) to #'clojure.core/pop-thread-bindings
+Adding edge from *parent* phone-tree.log/trace (phone-tree.log/trace) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.log/trace (phone-tree.log/trace) to #'phone-tree.log/log
+Adding edge from *parent* phone-tree.log/debug (phone-tree.log/debug) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.log/debug (phone-tree.log/debug) to #'phone-tree.log/log
+Adding edge from *parent* phone-tree.log/warn (phone-tree.log/warn) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.log/warn (phone-tree.log/warn) to #'phone-tree.log/log
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'phone-tree.log/enabled?
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/push-thread-bindings
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/hash-map
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/*out*
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/*err*
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/apply
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/printf
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/println
+Adding edge from *parent* phone-tree.log/logf (phone-tree.log/logf) to #'clojure.core/pop-thread-bindings
+Adding edge from *parent* phone-tree.log/tracef (phone-tree.log/tracef) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.log/tracef (phone-tree.log/tracef) to #'phone-tree.log/logf
+Adding edge from *parent* phone-tree.log/debugf (phone-tree.log/debugf) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.log/debugf (phone-tree.log/debugf) to #'phone-tree.log/logf
+Adding edge from *parent* phone-tree.log/warnf (phone-tree.log/warnf) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.log/warnf (phone-tree.log/warnf) to #'phone-tree.log/logf
+Parsing namespace: phone-tree.parse.build
+Adding edge from *parent* null (phone-tree.parse.build) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.build) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.build) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.build) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.build) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.build) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.build) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.build) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.build) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.build) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.build) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.build) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.build) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.build) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/map?
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/var?
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/update
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to {:symbol phone-tree.parse.build/node-type}
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/symbol?
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to {:symbol phone-tree.parse.build/node-type}
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/symbol?
+Adding edge from *parent* phone-tree.parse.build/conform-node (phone-tree.parse.build/conform-node) to #'clojure.core/ex-info
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to #'clojure.core/string?
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to #'phone-tree.parse.build/conform-node
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to #'clojure.core/pr-str
+Adding edge from *parent* phone-tree.parse.build/node-id (phone-tree.parse.build/node-id) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.build/->node (phone-tree.parse.build/->node) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.build/->node (phone-tree.parse.build/->node) to #'phone-tree.parse.build/node-id
+Adding edge from *parent* phone-tree.parse.build/->edge (phone-tree.parse.build/->edge) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.build/->edge (phone-tree.parse.build/->edge) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'clojure.core/list
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'phone-tree.parse.build/->edge
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'phone-tree.parse.build/node-id
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'phone-tree.parse.build/*parent*
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'clojure.core/get-in
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'phone-tree.log/debugf
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'phone-tree.parse.build/*parent*
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'phone-tree.parse.build/node-id
+Adding edge from *parent* phone-tree.parse.build/edge (phone-tree.parse.build/edge) to #'phone-tree.parse.ast/location
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.build/->node
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.build/conform-node
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.ast/location
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/list
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.build/*parent*
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.build/*parent*
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/push-thread-bindings
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/hash-map
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.build/*parent*
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/doall
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/mapcat
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.ast/parse
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'clojure.core/pop-thread-bindings
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.ast/first-form-var
+Adding edge from *parent* phone-tree.parse.build/node (phone-tree.parse.build/node) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to #'clojure.core/set
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to #'clojure.core/keep
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to #'clojure.core/dissoc
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to #'clojure.core/apply
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to #'clojure.core/merge
+Adding edge from *parent* phone-tree.parse.build/merge-attrs (phone-tree.parse.build/merge-attrs) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.parse.build/attrs->ubergraph (phone-tree.parse.build/attrs->ubergraph) to #'clojure.core/dissoc
+Adding edge from *parent* phone-tree.parse.build/attrs->ubergraph (phone-tree.parse.build/attrs->ubergraph) to #'clojure.core/dissoc
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to #'clojure.core/reduce
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to {:symbol loom.attr/add-attr}
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to #'clojure.core/remove
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to #'clojure.core/comp
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to #'ubergraph.core/attrs
+Adding edge from *parent* phone-tree.parse.build/mark-external-nodes (phone-tree.parse.build/mark-external-nodes) to {:symbol loom.graph/nodes}
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'phone-tree.parse.build/mark-external-nodes
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'clojure.core/apply
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'ubergraph.core/digraph
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'clojure.core/map
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'phone-tree.parse.build/attrs->ubergraph
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'clojure.core/map
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'phone-tree.parse.build/merge-attrs
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'clojure.core/vals
+Adding edge from *parent* phone-tree.parse.build/ubergraph (phone-tree.parse.build/ubergraph) to #'clojure.core/group-by
+Parsing namespace: phone-tree.parse.class
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.class) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.class) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.class) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.class) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.class) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.class) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.class) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.class/reify-templates (phone-tree.parse.class/reify-templates) to #'clojure.core/atom
+Adding edge from *parent* phone-tree.parse.class/reify-prefix (phone-tree.parse.class/reify-prefix) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.class/reify-prefix (phone-tree.parse.class/reify-prefix) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.class/reify-prefix (phone-tree.parse.class/reify-prefix) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.class/reify-prefix (phone-tree.parse.class/reify-prefix) to #'clojure.core/re-find
+Adding edge from *parent* phone-tree.parse.class/record-reify! (phone-tree.parse.class/record-reify!) to #'phone-tree.parse.class/reify-prefix
+Adding edge from *parent* phone-tree.parse.class/record-reify! (phone-tree.parse.class/record-reify!) to #'clojure.core/swap!
+Adding edge from *parent* phone-tree.parse.class/record-reify! (phone-tree.parse.class/record-reify!) to #'phone-tree.parse.class/reify-templates
+Adding edge from *parent* phone-tree.parse.class/record-reify! (phone-tree.parse.class/record-reify!) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to #'clojure.core/class
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to #'phone-tree.parse.class/reify-prefix
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to #'clojure.core/meta
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to #'clojure.core/deref
+Adding edge from *parent* phone-tree.parse.class/reify-class (phone-tree.parse.class/reify-class) to #'phone-tree.parse.class/reify-templates
+Adding edge from *parent* phone-tree.parse.ast/parse :reify (phone-tree.parse.ast/parse :reify) to #'phone-tree.parse.class/record-reify!
+Adding edge from *parent* phone-tree.parse.ast/parse :reify (phone-tree.parse.ast/parse :reify) to #'clojure.core/meta
+Adding edge from *parent* phone-tree.parse.ast/parse :reify (phone-tree.parse.ast/parse :reify) to #'clojure.core/get-method
+Adding edge from *parent* phone-tree.parse.ast/parse :reify (phone-tree.parse.ast/parse :reify) to #'phone-tree.parse.ast/parse
+Adding edge from *parent* null (phone-tree.parse.class) to clojure.lang.Var/hasRoot
+Adding edge from *parent* null (phone-tree.parse.class) to #'clojure.core/deref
+Adding edge from *parent* phone-tree.parse.class/guess-class* (phone-tree.parse.class/guess-class*) to clojure.lang.MultiFn/.
+Adding edge from *parent* phone-tree.parse.class/guess-class* :var (phone-tree.parse.class/guess-class* :var) to #'clojure.core/var-get
+Adding edge from *parent* phone-tree.parse.class/guess-class* :var (phone-tree.parse.class/guess-class* :var) to #'phone-tree.parse.class/reify-class
+Adding edge from *parent* phone-tree.parse.class/guess-class* :var (phone-tree.parse.class/guess-class* :var) to #'clojure.core/class
+Adding edge from *parent* phone-tree.parse.class/guess-class* :const (phone-tree.parse.class/guess-class* :const) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.parse.class/guess-class* :const (phone-tree.parse.class/guess-class* :const) to #'phone-tree.log/debugf
+Adding edge from *parent* phone-tree.parse.class/guess-class* :const (phone-tree.parse.class/guess-class* :const) to #'clojure.core/class
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'clojure.core/remove
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'clojure.core/keep
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'clojure.core/class?
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'clojure.core/map?
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'clojure.core/keep
+Adding edge from *parent* phone-tree.parse.class/guess-class (phone-tree.parse.class/guess-class) to #'phone-tree.parse.class/guess-class*
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Var (phone-tree.parse.build/node-type clojure.lang.Var) to #'clojure.core/meta
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Var (phone-tree.parse.build/node-type clojure.lang.Var) to #'clojure.core/meta
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Var (phone-tree.parse.build/node-type clojure.lang.Var) to {:symbol phone-tree.parse.build/node-type}
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to #'clojure.core/ns-resolve
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to {:symbol phone-tree.parse.build/node-type}
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to #'clojure.core/find-ns
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to #'clojure.core/namespace
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to #'clojure.core/class?
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to #'clojure.core/ns-resolve
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.build/node-type clojure.lang.Symbol (phone-tree.parse.build/node-type clojure.lang.Symbol) to #'clojure.core/namespace
+Parsing namespace: phone-tree.parse.interop
+Adding edge from *parent* null (phone-tree.parse.interop) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.interop) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.interop) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.interop) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.interop) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.interop) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.interop) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.interop) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.interop) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.interop) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.interop) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.interop) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.interop) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.interop) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse :instance-call (phone-tree.parse.ast/parse :instance-call) to #'phone-tree.parse.ast/parse-children
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.ast/parse :host-interop (phone-tree.parse.ast/parse :host-interop) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse :static-call (phone-tree.parse.ast/parse :static-call) to #'phone-tree.parse.ast/parse-children
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse :new (phone-tree.parse.ast/parse :new) to #'phone-tree.parse.ast/parse-children
+Parsing namespace: phone-tree.parse.protocol
+Adding edge from *parent* null (phone-tree.parse.protocol) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.protocol) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.protocol) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.protocol) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.protocol) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.protocol) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.protocol) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.protocol) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.protocol) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.protocol) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.protocol) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.protocol) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.protocol) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.protocol) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to clojure.lang.Delay/.
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.core/require
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.core/require
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.core/set
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.core/map
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.core/juxt
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.core/comp
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.tools.analyzer.ast/nodes
+Adding edge from *parent* phone-tree.parse.protocol/default-record-methods (phone-tree.parse.protocol/default-record-methods) to #'clojure.tools.analyzer.jvm/analyze
+Adding edge from *parent* phone-tree.parse.protocol/record-class? (phone-tree.parse.protocol/record-class?) to java.lang.Class/isAssignableFrom
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to #'phone-tree.parse.protocol/record-class?
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to #'clojure.core/contains?
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to #'clojure.core/deref
+Adding edge from *parent* phone-tree.parse.protocol/default-record-method? (phone-tree.parse.protocol/default-record-method?) to #'phone-tree.parse.protocol/default-record-methods
+Adding edge from *parent* phone-tree.parse.protocol/super-chain (phone-tree.parse.protocol/super-chain) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.parse.protocol/super-chain (phone-tree.parse.protocol/super-chain) to #'phone-tree.parse.protocol/super-chain
+Adding edge from *parent* phone-tree.parse.protocol/super-chain (phone-tree.parse.protocol/super-chain) to java.lang.Class/getSuperclass
+Adding edge from *parent* phone-tree.parse.protocol/protocol-dispatch (phone-tree.parse.protocol/protocol-dispatch) to #'clojure.core/isa?
+Adding edge from *parent* phone-tree.parse.protocol/protocol-dispatch (phone-tree.parse.protocol/protocol-dispatch) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.protocol/protocol-dispatch (phone-tree.parse.protocol/protocol-dispatch) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.parse.protocol/protocol-dispatch (phone-tree.parse.protocol/protocol-dispatch) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.parse.protocol/protocol-dispatch (phone-tree.parse.protocol/protocol-dispatch) to #'clojure.core/get
+Adding edge from *parent* phone-tree.parse.protocol/protocol-dispatch (phone-tree.parse.protocol/protocol-dispatch) to #'phone-tree.parse.protocol/super-chain
+Adding edge from *parent* phone-tree.parse.protocol/protocol-dispatch (phone-tree.parse.protocol/protocol-dispatch) to #'clojure.tools.analyzer.jvm.utils/box
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.parse.ast/ast-resolve
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/var-get
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/flatten
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/munge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/munge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defprotocol) (phone-tree.parse.ast/parse (quote clojure.core/defprotocol)) to #'clojure.core/keys
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'phone-tree.parse.protocol/default-record-method?
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'clojure.core/munge
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse :method (phone-tree.parse.ast/parse :method) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/next
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/flatten
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/namespace
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not=
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/map
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/vector
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/namespace
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not=
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/not
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/map
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/vector
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/extend) (phone-tree.parse.ast/parse (quote clojure.core/extend)) to #'clojure.core/partition-all
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/var-get
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'phone-tree.util/var->symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'phone-tree.parse.class/guess-class
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/isa?
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to java.lang.Object/getName
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/munge
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'phone-tree.parse.protocol/protocol-dispatch
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/mapcat
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'phone-tree.parse.ast/parse
+Adding edge from *parent* phone-tree.parse.ast/parse :protocol-invoke (phone-tree.parse.ast/parse :protocol-invoke) to #'clojure.core/cons
+Parsing namespace: phone-tree.parse.multimethod
+Adding edge from *parent* null (phone-tree.parse.multimethod) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.multimethod) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.multimethod) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.multimethod) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.multimethod) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.multimethod) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.multimethod) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.multimethod) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.multimethod) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.multimethod) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.multimethod) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.multimethod) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.multimethod) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.multimethod) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod) (phone-tree.parse.ast/parse (quote clojure.lang.MultiFn/addMethod)) to #'clojure.core/dissoc
+Parsing namespace: phone-tree.parse.var
+Adding edge from *parent* null (phone-tree.parse.var) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.var) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.var) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.var) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.var) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.var) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.var) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.var) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.var) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.var) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.var) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.var) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.var) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.var) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.ast/parse :def (phone-tree.parse.ast/parse :def) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :def (phone-tree.parse.ast/parse :def) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :def (phone-tree.parse.ast/parse :def) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :def (phone-tree.parse.ast/parse :def) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :def (phone-tree.parse.ast/parse :def) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :def (phone-tree.parse.ast/parse :def) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse :var (phone-tree.parse.ast/parse :var) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :var (phone-tree.parse.ast/parse :var) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :var (phone-tree.parse.ast/parse :var) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :var (phone-tree.parse.ast/parse :var) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :var (phone-tree.parse.ast/parse :var) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse :the-var (phone-tree.parse.ast/parse :the-var) to #'phone-tree.parse.build/edge
+Parsing namespace: phone-tree.parse
+Adding edge from *parent* null (phone-tree.parse) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse/parse-ns (phone-tree.parse/parse-ns) to #'phone-tree.log/debugf
+Adding edge from *parent* phone-tree.parse/parse-ns (phone-tree.parse/parse-ns) to #'clojure.core/mapcat
+Adding edge from *parent* phone-tree.parse/parse-ns (phone-tree.parse/parse-ns) to #'phone-tree.parse.ast/parse
+Adding edge from *parent* phone-tree.parse/parse-ns (phone-tree.parse/parse-ns) to #'clojure.tools.analyzer.jvm/analyze-ns
+Adding edge from *parent* phone-tree.parse/ns->graph (phone-tree.parse/ns->graph) to #'phone-tree.parse.build/ubergraph
+Adding edge from *parent* phone-tree.parse/ns->graph (phone-tree.parse/ns->graph) to #'phone-tree.parse/parse-ns
+Adding edge from *parent* phone-tree.parse/nss->graph (phone-tree.parse/nss->graph) to #'phone-tree.parse.build/ubergraph
+Adding edge from *parent* phone-tree.parse/nss->graph (phone-tree.parse/nss->graph) to #'clojure.core/mapcat
+Adding edge from *parent* phone-tree.parse/nss->graph (phone-tree.parse/nss->graph) to #'phone-tree.parse/parse-ns
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/namespace
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/str
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/ns-name
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/name
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/map?
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/update
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/merge
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'phone-tree.parse.ast/location
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'phone-tree.parse.ast/location
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/map
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'phone-tree.parse.ast/location
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.parse/ast-meta->graph (phone-tree.parse/ast-meta->graph) to #'phone-tree.parse.ast/location
+Parsing namespace: phone-tree.html
+Adding edge from *parent* null (phone-tree.html) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.html) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.html) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.html) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.html) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.html) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.html) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.html) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.html) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.html) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.html) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.html) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.html) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.html) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.html/read-html-resource (phone-tree.html/read-html-resource) to #'clojure.core/slurp
+Adding edge from *parent* phone-tree.html/read-html-resource (phone-tree.html/read-html-resource) to #'clojure.java.io/resource
+Adding edge from *parent* phone-tree.html/read-html-resource (phone-tree.html/read-html-resource) to #'clojure.core/str
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to #'clojure.string/replace
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to #'clojure.string/replace
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to #'phone-tree.html/read-html-resource
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to clojure.lang.RT/nth
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.html/mini-hbs (phone-tree.html/mini-hbs) to #'clojure.core/keyword
+Adding edge from *parent* phone-tree.html/render (phone-tree.html/render) to #'phone-tree.html/mini-hbs
+Adding edge from *parent* phone-tree.html/render (phone-tree.html/render) to #'phone-tree.html/read-html-resource
+Parsing namespace: phone-tree.redef
+Adding edge from *parent* null (phone-tree.redef) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.redef) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.redef) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.redef) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.redef) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.redef) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.redef) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.redef) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.redef) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.redef) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.redef) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.redef) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.redef) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.redef) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to #'clojure.java.io/reader
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to java.io.PushbackReader/.
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to #'clojure.core/doall
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to #'clojure.core/take-while
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to #'clojure.core/not=
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to #'clojure.core/repeatedly
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to #'clojure.core/read
+Adding edge from *parent* phone-tree.redef/read-forms (phone-tree.redef/read-forms) to java.io.Reader/close
+Adding edge from *parent* phone-tree.redef/try-require (phone-tree.redef/try-require) to #'clojure.core/apply
+Adding edge from *parent* phone-tree.redef/try-require (phone-tree.redef/try-require) to #'clojure.core/require
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/first
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/next
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/first
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/next
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/namespace
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/name
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'phone-tree.redef/try-require
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/push-thread-bindings
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/hash-map
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/*ns*
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/find-ns
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'phone-tree.log/debugf
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/ns-unmap
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/*ns*
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/eval
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'clojure.core/pop-thread-bindings
+Adding edge from *parent* phone-tree.redef/redef-form (phone-tree.redef/redef-form) to #'phone-tree.log/warnf
+Adding edge from *parent* phone-tree.redef/load-redefs (phone-tree.redef/load-redefs) to #'phone-tree.log/debugf
+Adding edge from *parent* phone-tree.redef/load-redefs (phone-tree.redef/load-redefs) to #'clojure.core/set
+Adding edge from *parent* phone-tree.redef/load-redefs (phone-tree.redef/load-redefs) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.redef/load-redefs (phone-tree.redef/load-redefs) to #'clojure.core/identity
+Adding edge from *parent* phone-tree.redef/load-redefs (phone-tree.redef/load-redefs) to #'clojure.core/map
+Adding edge from *parent* phone-tree.redef/load-redefs (phone-tree.redef/load-redefs) to #'phone-tree.redef/redef-form
+Adding edge from *parent* phone-tree.redef/load-redefs (phone-tree.redef/load-redefs) to #'phone-tree.redef/read-forms
+Parsing namespace: phone-tree.graph
+Adding edge from *parent* null (phone-tree.graph) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.graph) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.graph) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.graph) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.graph) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.graph) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.graph) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.graph) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.graph) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.graph) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.graph) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.graph) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.graph) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.graph) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.graph/find-nodes (phone-tree.graph/find-nodes) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.graph/find-nodes (phone-tree.graph/find-nodes) to {:symbol loom.graph/nodes}
+Adding edge from *parent* phone-tree.graph/remove-nodes (phone-tree.graph/remove-nodes) to #'clojure.core/apply
+Adding edge from *parent* phone-tree.graph/remove-nodes (phone-tree.graph/remove-nodes) to #'ubergraph.core/remove-nodes
+Adding edge from *parent* phone-tree.graph/remove-nodes (phone-tree.graph/remove-nodes) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.graph/remove-nodes (phone-tree.graph/remove-nodes) to {:symbol loom.graph/nodes}
+Adding edge from *parent* phone-tree.graph/filter-nodes (phone-tree.graph/filter-nodes) to #'phone-tree.graph/remove-nodes
+Adding edge from *parent* phone-tree.graph/filter-nodes (phone-tree.graph/filter-nodes) to #'clojure.core/complement
+Adding edge from *parent* phone-tree.graph/reachable-nodes (phone-tree.graph/reachable-nodes) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/reachable-nodes (phone-tree.graph/reachable-nodes) to #'clojure.core/set
+Adding edge from *parent* phone-tree.graph/reachable-nodes (phone-tree.graph/reachable-nodes) to #'loom.alg-generic/bf-traverse
+Adding edge from *parent* phone-tree.graph/->starting-nodes (phone-tree.graph/->starting-nodes) to #'clojure.core/fn?
+Adding edge from *parent* phone-tree.graph/->starting-nodes (phone-tree.graph/->starting-nodes) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.graph/->starting-nodes (phone-tree.graph/->starting-nodes) to {:symbol loom.graph/nodes}
+Adding edge from *parent* phone-tree.graph/filter-descendants (phone-tree.graph/filter-descendants) to #'phone-tree.graph/->starting-nodes
+Adding edge from *parent* phone-tree.graph/filter-descendants (phone-tree.graph/filter-descendants) to #'phone-tree.graph/filter-nodes
+Adding edge from *parent* phone-tree.graph/filter-descendants (phone-tree.graph/filter-descendants) to #'phone-tree.graph/reachable-nodes
+Adding edge from *parent* phone-tree.graph/filter-descendants (phone-tree.graph/filter-descendants) to #'ubergraph.core/successors
+Adding edge from *parent* phone-tree.graph/filter-ancestors (phone-tree.graph/filter-ancestors) to #'phone-tree.graph/->starting-nodes
+Adding edge from *parent* phone-tree.graph/filter-ancestors (phone-tree.graph/filter-ancestors) to #'phone-tree.graph/filter-nodes
+Adding edge from *parent* phone-tree.graph/filter-ancestors (phone-tree.graph/filter-ancestors) to #'phone-tree.graph/reachable-nodes
+Adding edge from *parent* phone-tree.graph/filter-ancestors (phone-tree.graph/filter-ancestors) to #'ubergraph.core/predecessors
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/update
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/str
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/update
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/str
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/not
+Adding edge from *parent* phone-tree.graph/node-attrs (phone-tree.graph/node-attrs) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to #'clojure.core/reduce
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to {:symbol ubergraph.protocols/set-attrs}
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to #'phone-tree.graph/node-attrs
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to {:symbol loom.attr/attrs}
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to {:symbol loom.graph/nodes}
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to #'clojure.core/reduce
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to {:symbol ubergraph.protocols/set-attrs}
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to #'phone-tree.graph/edge-attrs
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to {:symbol loom.attr/attrs}
+Adding edge from *parent* phone-tree.graph/with-dot-attrs (phone-tree.graph/with-dot-attrs) to {:symbol loom.graph/edges}
+Adding edge from *parent* phone-tree.graph/->dot (phone-tree.graph/->dot) to #'phone-tree.graph/->dot
+Adding edge from *parent* phone-tree.graph/->dot (phone-tree.graph/->dot) to java.io.StringWriter/.
+Adding edge from *parent* phone-tree.graph/->dot (phone-tree.graph/->dot) to #'ubergraph.core/viz-graph
+Adding edge from *parent* phone-tree.graph/->dot (phone-tree.graph/->dot) to #'phone-tree.graph/with-dot-attrs
+Adding edge from *parent* phone-tree.graph/->dot (phone-tree.graph/->dot) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.graph/->dot (phone-tree.graph/->dot) to #'clojure.core/str
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'phone-tree.graph/with-dot-attrs
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.data.json/write-str
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.attr/attrs}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/first
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.attr/attrs}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.graph/nodes}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.LazySeq/.
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-buffer
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-append
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.graph/src}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk-cons
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/chunk
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/first
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/cons
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.graph/src}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to #'clojure.core/rest
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.graph/edges}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.graph/dest}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.attr/attrs}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.graph/dest}
+Adding edge from *parent* phone-tree.graph/->json (phone-tree.graph/->json) to {:symbol loom.attr/attrs}
+Adding edge from *parent* phone-tree.graph/->topology (phone-tree.graph/->topology) to #'clojure.core/into
+Adding edge from *parent* phone-tree.graph/->topology (phone-tree.graph/->topology) to #'clojure.core/map
+Adding edge from *parent* phone-tree.graph/->topology (phone-tree.graph/->topology) to {:symbol loom.graph/src}
+Adding edge from *parent* phone-tree.graph/->topology (phone-tree.graph/->topology) to {:symbol loom.graph/dest}
+Adding edge from *parent* phone-tree.graph/->topology (phone-tree.graph/->topology) to {:symbol loom.attr/attr}
+Adding edge from *parent* phone-tree.graph/->topology (phone-tree.graph/->topology) to {:symbol loom.graph/edges}
+Adding edge from *parent* phone-tree.graph/->csv (phone-tree.graph/->csv) to #'phone-tree.graph/->topology
+Adding edge from *parent* phone-tree.graph/->csv (phone-tree.graph/->csv) to #'clojure.core/map
+Adding edge from *parent* phone-tree.graph/->csv (phone-tree.graph/->csv) to #'clojure.core/flatten
+Adding edge from *parent* phone-tree.graph/->csv (phone-tree.graph/->csv) to java.io.StringWriter/.
+Adding edge from *parent* phone-tree.graph/->csv (phone-tree.graph/->csv) to #'clojure.data.csv/write-csv
+Adding edge from *parent* phone-tree.graph/->csv (phone-tree.graph/->csv) to #'clojure.core/str
+Parsing namespace: phone-tree.namespace
+Adding edge from *parent* null (phone-tree.namespace) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.namespace) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.namespace) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.namespace) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.namespace) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.namespace) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.namespace) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.namespace) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.namespace) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.namespace) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.namespace) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.namespace) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.namespace) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.namespace) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/create-ns
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/first
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/create-ns
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/next
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.Numbers/lt
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.IChunk/nth
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/require
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.Numbers/unchecked_inc
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/chunked-seq?
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/chunk-first
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/chunk-rest
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.RT/count
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to clojure.lang.RT/intCast
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/first
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/require
+Adding edge from *parent* phone-tree.namespace/prepare-namespaces (phone-tree.namespace/prepare-namespaces) to #'clojure.core/next
+Adding edge from *parent* phone-tree.namespace/nss-in-dirs (phone-tree.namespace/nss-in-dirs) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.namespace/nss-in-dirs (phone-tree.namespace/nss-in-dirs) to #'clojure.core/apply
+Adding edge from *parent* phone-tree.namespace/nss-in-dirs (phone-tree.namespace/nss-in-dirs) to #'clojure.tools.namespace.dir/scan-all
+Adding edge from *parent* phone-tree.namespace/nss-in-dirs (phone-tree.namespace/nss-in-dirs) to #'clojure.tools.namespace.track/tracker
+Adding edge from *parent* phone-tree.namespace/nss-in-dirs (phone-tree.namespace/nss-in-dirs) to #'clojure.tools.namespace.track/tracker
+Parsing namespace: phone-tree.core
+Adding edge from *parent* null (phone-tree.core) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.core) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.core) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.core) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.core) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.core) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.core) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.core) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.core) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.core) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.core) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.core) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.core) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.core) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.core/collect-fn (phone-tree.core/collect-fn) to #'clojure.core/meta
+Adding edge from *parent* phone-tree.core/collect-fn (phone-tree.core/collect-fn) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/collect-fn (phone-tree.core/collect-fn) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.core/collect-fn (phone-tree.core/collect-fn) to #'clojure.core/update
+Adding edge from *parent* phone-tree.core/collect-fn (phone-tree.core/collect-fn) to #'clojure.core/fnil
+Adding edge from *parent* phone-tree.core/collect-fn (phone-tree.core/collect-fn) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'clojure.core/keyword
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'phone-tree.core/collect-fn
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'clojure.core/re-pattern
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'phone-tree.core/collect-fn
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'clojure.core/re-pattern
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'phone-tree.core/collect-fn
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'clojure.core/re-pattern
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'phone-tree.core/collect-fn
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'clojure.core/re-pattern
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'phone-tree.core/collect-fn
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'clojure.core/re-pattern
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'phone-tree.core/collect-fn
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'clojure.core/re-pattern
+Adding edge from *parent* phone-tree.core/cli-options (phone-tree.core/cli-options) to #'phone-tree.core/collect-fn
+Adding edge from *parent* phone-tree.core/usage (phone-tree.core/usage) to #'clojure.string/join
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/assoc
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/not
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/update
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/fnil
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/not
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/update
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/fnil
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'phone-tree.core/exclude-clojure-regex
+Adding edge from *parent* phone-tree.core/conform-options (phone-tree.core/conform-options) to #'phone-tree.core/exclude-java-regex
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to #'clojure.tools.cli/parse-opts
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to #'phone-tree.core/cli-options
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to #'phone-tree.core/usage
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to #'clojure.string/join
+Adding edge from *parent* phone-tree.core/parse-cli (phone-tree.core/parse-cli) to #'phone-tree.core/conform-options
+Adding edge from *parent* phone-tree.core/matches-any? (phone-tree.core/matches-any?) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/matches-any? (phone-tree.core/matches-any?) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.core/matches-any? (phone-tree.core/matches-any?) to #'clojure.core/re-matches
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'phone-tree.namespace/nss-in-dirs
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/map
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/str
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'phone-tree.core/matches-any?
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/remove
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'phone-tree.core/matches-any?
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/map
+Adding edge from *parent* phone-tree.core/find-namespaces (phone-tree.core/find-namespaces) to #'clojure.core/symbol
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.graph/filter-nodes
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.core/matches-any?
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.graph/remove-nodes
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.core/matches-any?
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.graph/filter-ancestors
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.graph/find-nodes
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.core/matches-any?
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.graph/filter-descendants
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.graph/find-nodes
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'clojure.core/partial
+Adding edge from *parent* phone-tree.core/prune-graph (phone-tree.core/prune-graph) to #'phone-tree.core/matches-any?
+Adding edge from *parent* phone-tree.core/my-defn (phone-tree.core/my-defn) to #'clojure.core/sequence
+Adding edge from *parent* phone-tree.core/my-defn (phone-tree.core/my-defn) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.core/my-defn (phone-tree.core/my-defn) to #'clojure.core/concat
+Adding edge from *parent* phone-tree.core/my-defn (phone-tree.core/my-defn) to #'clojure.core/list
+Adding edge from *parent* phone-tree.core/my-defn (phone-tree.core/my-defn) to clojure.core/defn
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'clojure.core/println
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'phone-tree.html/render
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'phone-tree.graph/->json
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'clojure.core/println
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'phone-tree.graph/->dot
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'clojure.core/println
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'ubergraph.core/ubergraph->edn
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'clojure.core/println
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'phone-tree.graph/->csv
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to java.lang.IllegalArgumentException/.
+Adding edge from *parent* phone-tree.core/print-graph (phone-tree.core/print-graph) to #'clojure.core/str
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'clojure.core/push-thread-bindings
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'clojure.core/hash-map
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'phone-tree.log/*level*
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'phone-tree.log/tracef
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to clojure.lang.Util/identical
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'clojure.core/println
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to java.lang.System/exit
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'phone-tree.core/print-graph
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'phone-tree.core/prune-graph
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'phone-tree.parse/nss->graph
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'phone-tree.namespace/prepare-namespaces
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'phone-tree.core/find-namespaces
+Adding edge from *parent* phone-tree.core/run (phone-tree.core/run) to #'clojure.core/pop-thread-bindings
+Adding edge from *parent* phone-tree.core/run-with-project (phone-tree.core/run-with-project) to #'phone-tree.core/run
+Adding edge from *parent* phone-tree.core/run-with-project (phone-tree.core/run-with-project) to #'clojure.core/merge
+Adding edge from *parent* phone-tree.core/run-with-project (phone-tree.core/run-with-project) to #'phone-tree.core/parse-cli
+Adding edge from *parent* phone-tree.core/-main (phone-tree.core/-main) to #'phone-tree.core/run
+Adding edge from *parent* phone-tree.core/-main (phone-tree.core/-main) to #'phone-tree.core/parse-cli
+Parsing namespace: phone-tree.parse.macro
+Adding edge from *parent* null (phone-tree.parse.macro) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.macro) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.macro) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.macro) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.macro) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.macro) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.macro) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.macro) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.macro) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.macro) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.macro) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.macro) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.macro) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.macro) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.core/push-thread-bindings
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.core/hash-map
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'phone-tree.parse.macro/*in-macro*
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.core/doall
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'phone-tree.parse.ast/parse
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.core/first
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.core/filter
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.core/comp
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.tools.analyzer.ast/nodes
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/defmacro) (phone-tree.parse.ast/parse (quote clojure.core/defmacro)) to #'clojure.core/pop-thread-bindings
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to #'phone-tree.parse.macro/*in-macro*
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to clojure.lang.Util/equiv
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to #'phone-tree.parse.build/edge
+Adding edge from *parent* phone-tree.parse.ast/parse :quote (phone-tree.parse.ast/parse :quote) to #'phone-tree.parse.ast/parse-children
+Parsing namespace: phone-tree.parse.namespace
+Adding edge from *parent* null (phone-tree.parse.namespace) to clojure.lang.Namespace/resetMeta
+Adding edge from *parent* null (phone-tree.parse.namespace) to clojure.lang.Namespace/find
+Adding edge from *parent* null (phone-tree.parse.namespace) to clojure.lang.Var/pushThreadBindings
+Adding edge from *parent* null (phone-tree.parse.namespace) to java.lang.Class/getClassLoader
+Adding edge from *parent* null (phone-tree.parse.namespace) to clojure.lang.AFunction/getClass
+Adding edge from *parent* null (phone-tree.parse.namespace) to #'clojure.core/refer
+Adding edge from *parent* null (phone-tree.parse.namespace) to #'clojure.core/require
+Adding edge from *parent* null (phone-tree.parse.namespace) to clojure.lang.Var/popThreadBindings
+Adding edge from *parent* null (phone-tree.parse.namespace) to clojure.lang.Symbol/equals
+Adding edge from *parent* null (phone-tree.parse.namespace) to clojure.lang.LockingTransaction/runInTransaction
+Adding edge from *parent* null (phone-tree.parse.namespace) to #'clojure.core/commute
+Adding edge from *parent* null (phone-tree.parse.namespace) to #'clojure.core/deref
+Adding edge from *parent* null (phone-tree.parse.namespace) to #'clojure.core/*loaded-libs*
+Adding edge from *parent* null (phone-tree.parse.namespace) to #'clojure.core/conj
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/in-ns) (phone-tree.parse.ast/parse (quote clojure.core/in-ns)) to #'clojure.core/seq?
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/in-ns) (phone-tree.parse.ast/parse (quote clojure.core/in-ns)) to clojure.lang.PersistentHashMap/create
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/in-ns) (phone-tree.parse.ast/parse (quote clojure.core/in-ns)) to #'clojure.core/seq
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/in-ns) (phone-tree.parse.ast/parse (quote clojure.core/in-ns)) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/in-ns) (phone-tree.parse.ast/parse (quote clojure.core/in-ns)) to clojure.lang.RT/get
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/in-ns) (phone-tree.parse.ast/parse (quote clojure.core/in-ns)) to #'phone-tree.parse.build/node
+Adding edge from *parent* phone-tree.parse.ast/parse (quote clojure.core/in-ns) (phone-tree.parse.ast/parse (quote clojure.core/in-ns)) to #'clojure.core/ns-name

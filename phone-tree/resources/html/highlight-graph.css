@@ -1,0 +1,32 @@
+/* dimmed styles */
+svg.dimmed .graph :not(.hovered):not(.selected) [stroke]:not([stroke=none]) {
+  stroke: #ddd;
+  transition: 0.3s;
+}
+
+svg.dimmed .graph :not(.hovered):not(.selected) [fill]:not([fill=none]) {
+  fill: #ddd;
+  filter: grayscale() opacity(50%);
+  transition: 0.3s;
+}
+
+svg.dimmed .node:not(.hovered):not(.selected) :not(text) {
+  fill: none !important;
+  transition: 0.3s;
+}
+
+svg.dimmed .node:not(.hovered):not(.selected) image {
+  filter: grayscale() opacity(50%);
+}
+
+
+/* hover path highlight */
+.node.hovered [stroke]:not([stroke=none]),
+.edge.hovered [stroke]:not([stroke=none]) {
+  stroke: #f00 !important;
+  stroke-width: 2px;
+}
+
+.edge.hovered [fill]:not([fill=none]) {
+  fill: #f00 !important;
+}
