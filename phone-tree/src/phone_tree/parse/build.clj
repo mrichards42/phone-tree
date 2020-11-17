@@ -30,7 +30,10 @@
       :else (node-type (var-get v))))
   clojure.lang.Symbol
   (node-type [s]
-    (let [v (ns-resolve 'clojure.core s)]
+    (let [v (try
+              (ns-resolve 'clojure.core s)
+              (catch Exception _
+                nil))]
       (cond
         v (node-type v)
         (find-ns s) :namespace
