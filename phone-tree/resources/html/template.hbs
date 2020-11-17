@@ -42,7 +42,7 @@
       function dotStr(g) {
         function dotAttrStr(attrs) {
           return `[${
-            Object.entries(attrs || {}).map(([key, val]) => `${key}="${val}"`).join("; ")
+            Object.entries(attrs || {}).map(([key, val]) => `${key}=${JSON.stringify(val)}`).join("; ")
           }]`
         }
 
