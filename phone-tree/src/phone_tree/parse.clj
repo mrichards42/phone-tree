@@ -39,7 +39,8 @@
 
 (defn parse-ns [sym]
   (log/debugf "Parsing namespace: %s" sym)
-  (mapcat ast/parse (ana.jvm/analyze-ns sym)))
+  (binding [clojure.tools.reader/*data-readers* *data-readers*]
+    (doall (mapcat ast/parse (ana.jvm/analyze-ns sym)))))
 
 (defn ns->graph
   "Returns a call graph for a namespace symbol."
