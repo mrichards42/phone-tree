@@ -41,6 +41,10 @@
                      (into {})))
     :assoc-fn collect-fn]
 
+   ;; Input options
+   [nil "--graph FILE.edn"
+    "Import an existing edn graph file instead of analyzing namespaces"]
+
    ;; Graph building options
    [nil "--include-ns REGEX"
     "Project namespaces to analyze (can be repeated)."
@@ -155,11 +159,17 @@
     (when-let [exit-code (:exit opts)]
       (some-> opts :message println)
       (System/exit exit-code))
-    (-> (find-namespaces opts)
-        (prepare-namespaces)
-        (parse/nss->graph)
-        (prune-graph opts)
-        (print-graph opts))))
+    (if (:graph opts)
+      (-> (slurp (:graph opts))
+          (clojure.edn/read-string)
+          (uber/edn->ubergraph)
+          (prune-graph opts)
+          (print-graph opts))
+      (-> (find-namespaces opts)
+          (prepare-namespaces)
+          (parse/nss->graph)
+          (prune-graph opts)
+          (print-graph opts)))))
 
 (defn run-with-project [project-opts & args]
   (run (merge project-opts (parse-cli args))))
