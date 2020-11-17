@@ -136,41 +136,43 @@
   ;;     {...})
   ;;
   (when-let [class-sym (some-> the-cls :val (.getName) symbol)]
-    (flatten
-     ;; 1. Outer loop -- each protocol and function map
-     (for [[protocol-var method-map] (partition-all 2 proto+maps)
-           :let [protocol (util/var->symbol (:var protocol-var))
-                 protocol-ns (some-> protocol namespace)]]
-       (cond
-         (not protocol-ns)
-         (log/warnf "Unable to parse extend without protocol: %s"
-                    (:form ast))
-         (not= :map (:op method-map))
-         (log/warnf "Unable to parse extend with %s method-map: %s"
-                    (:op method-map) (:form ast))
-         :else
-         ;; 2. Inner loop -- each k/v pair in the function map
-         (for [[fn-kw body] (map vector (:keys method-map) (:vals method-map))
-               ;; For each function:
-               ;; - ns is the protocol's namespace
-               ;; - name is the key in the function map
-               ;; - the class (to dispatch on) is the type that is being extended
-               ;; - body is the value in the function map
-               :let [protocol-fn (some->> fn-kw :val name (symbol protocol-ns))]]
-           (if-not protocol-fn
-             (log/warnf "Unable to find protocol function in extend for %s"
-                        (:form fn-kw))
-             ;; Unlike :method, extend doesn't add _methods_ to a type, it just
-             ;; adds _dispatches_ from the protocol. These extend functions
-             ;; exist at (get-in MyProtocol [:impls some-class :fn-kw])
-             (concat ;; the method, which dispatches on class
-                     (build/node ast
-                                 {:symbol protocol-fn, :dispatch class-sym}
-                                 body)
-                     ;; call the dispatch from the protocol-fn fn
-                     (build/edge ast {:src {:symbol protocol-fn}
-                                      :dest {:symbol protocol-fn
-                                             :dispatch class-sym}})))))))))
+    (filter
+     identity
+     (flatten
+      ;; 1. Outer loop -- each protocol and function map
+      (for [[protocol-var method-map] (partition-all 2 proto+maps)
+            :let [protocol (util/var->symbol (:var protocol-var))
+                  protocol-ns (some-> protocol namespace)]]
+        (cond
+          (not protocol-ns)
+          (log/warnf "Unable to parse extend without protocol: %s"
+                     (:form ast))
+          (not= :map (:op method-map))
+          (log/warnf "Unable to parse extend with %s method-map: %s"
+                     (:op method-map) (:form ast))
+          :else
+          ;; 2. Inner loop -- each k/v pair in the function map
+          (for [[fn-kw body] (map vector (:keys method-map) (:vals method-map))
+                ;; For each function:
+                ;; - ns is the protocol's namespace
+                ;; - name is the key in the function map
+                ;; - the class (to dispatch on) is the type that is being extended
+                ;; - body is the value in the function map
+                :let [protocol-fn (some->> fn-kw :val name (symbol protocol-ns))]]
+            (if-not protocol-fn
+              (log/warnf "Unable to find protocol function in extend for %s"
+                         (:form fn-kw))
+              ;; Unlike :method, extend doesn't add _methods_ to a type, it just
+              ;; adds _dispatches_ from the protocol. These extend functions
+              ;; exist at (get-in MyProtocol [:impls some-class :fn-kw])
+              (concat ;; the method, which dispatches on class
+                      (build/node ast
+                                  {:symbol protocol-fn, :dispatch class-sym}
+                                  body)
+                      ;; call the dispatch from the protocol-fn fn
+                      (build/edge ast {:src {:symbol protocol-fn}
+                                       :dest {:symbol protocol-fn
+                                              :dispatch class-sym}}))))))))))
 
 
 ;; (defprotocol MyProtocol
