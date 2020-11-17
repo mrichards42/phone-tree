@@ -147,11 +147,12 @@
         (seq include-descendants) (graph/filter-descendants (partial matches-any? include-descendants))))))
 
 (defn print-graph [g opts]
-  (case (:format opts)
-    :edn (prn (uber/ubergraph->edn g))
-    :dot (println (graph/->dot g (:dot-attr opts)))
-    :html (println (html/render (graph/->json g)))
-    :csv (println (graph/->csv g))))
+  (binding [*print-length* nil]
+    (case (:format opts)
+      :edn (prn (uber/ubergraph->edn g))
+      :dot (println (graph/->dot g (:dot-attr opts)))
+      :html (println (html/render (graph/->json g)))
+      :csv (println (graph/->csv g)))))
 
 (defn run [opts]
   (binding [log/*level* (:log-level opts :warn)]
